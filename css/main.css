@@ -1,0 +1,203 @@
+/* Import the font I would like to use*/
+@import url('http://fonts.cdnfonts.com/css/sf-mono');
+font-family: 'SF Mono', sans-serif;  
+
+/* Set background to contast the table backgrounds*/
+body {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Styling for Header Tabel*/
+table.header {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: 'SF Mono';
+  height: auto;
+  border-radius: 20px;
+}
+/* Styling for the Header Cell*/
+table.header td, table.header th {
+  border: 1px solid #D3D3D3;
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto;
+}
+/* Styling for the Header Table body*/
+table.header tbody td {
+  font-size: 18px
+  font-family: 'SF Mono';
+  height: 100%;
+}
+/* Styling for the About Table*/
+table.about {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: 'SF Mono';
+  height: auto;
+  border-radius: 20px;
+}
+/* Styling for the About Cell*/
+table.about td, table.about th {
+  border: 1px solid #D3D3D3;
+  padding: 3px 2px;
+  font-family: 'SF Mono';
+  height: auto;
+  width: 49%;
+  float: left;
+}
+/* Stylning for About table body*/
+table.about tbody td {
+  font-size: 16px;
+  font-family: 'SF Mono';
+  height: 100%;
+}
+
+/* Styling for the Bio Table*/
+table.bio {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: 'SF Mono';
+  height: auto;   
+  border-radius: 20px;
+}
+/* Styling for the Bio Cell*/
+table.bio td, table.bio th {
+  border: 1px solid #D3D3D3;
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto; 
+}
+/* Styling for the Bio body*/
+table.bio tbody td {
+  font-size: 16px;
+  font-family: 'SF Mono';
+  height: auto; 
+}
+
+/* Styling for the Skill Table*/
+table.skills {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: 'SF Mono';
+  height: auto;   
+  border-radius: 20px;
+}
+/* Styling for the Skills Cell*/
+table.skills td, table.skills th {
+  border: 1px solid #D3D3D3;
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto; 
+}
+/* Styling for the Skills Body*/
+table.skills tbody td {
+  font-size: 16px;
+  font-family: 'SF Mono';
+  height: auto;   
+  width: 50%;
+}
+
+/*Styling for Experience Table*/
+table.experience {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: 'SF Mono';
+  height: auto;     
+  border-radius: 20px;
+}
+/* Styling for the Experience Cell*/
+table.experience td, table.experience th {
+  border: 1px solid #D3D3D3;
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto; 
+}
+/*Styling for the Experience Body*/
+table.experience tbody td {
+  font-size: 16px;
+  font-family: 'SF Mono';
+  height: auto;
+}
+
+/* Styling for images*/
+img {
+    border-radius: 50%;
+    float: right;
+    padding-top: 5px:
+}
+
+/* Table for CV download styling*/
+table.cv {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-radius: 20px;
+}
+/* Styling for the CV cell*/
+table.cv td, table.cv th {
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto; 
+}
+/*Styling for the CV table body*/
+table.cv tbody td {
+  font-size: 16px;
+}
+
+/* Additional Styling for H1*/
+h1 {
+  font-size: 26;
+    font-weight: 800;
+}
+
+/* Additional Styling for h4*/
+h4 {
+    font-weight: 400;
+}
+
+/* Styling for the footer*/
+footer{
+    font-size: 12px;
+    font-family: 'SF Mono';
+    background-color: #D3D3D3; 
+    border-radius: 20px;
+    padding: 10px 10px;  
+}
+
+/* VIrgin Lin */
+a:link {
+  color: darkturquoise;
+}
+
+/* Visited Link */
+a:visited {
+  color: seagreen;
+}
+
+/* Hover Over Link */
+a:hover {
+  color: mediumaquamarine;
+}
+
+/* Clicked Link */
+a:active {
+  color: cornflowerblue;
+}
