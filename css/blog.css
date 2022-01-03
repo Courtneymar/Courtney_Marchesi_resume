@@ -1,0 +1,100 @@
+@import url('http://fonts.cdnfonts.com/css/sf-mono');
+font-family: 'SF Mono', sans-serif;  
+
+/* Set background to contast the table backgrounds*/
+body {
+  background-color: white;
+  padding: 10px;
+}
+
+img {
+    border-radius: 5%;
+    align-content: center
+    padding-top: 5px:
+    padding-bottom: 5px;
+}
+
+/* Table for CV download styling*/
+table.blog {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-radius: 20px;
+}
+/* Styling for the CV cell*/
+table.blog td, table.cv th {
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto; 
+}
+/*Styling for the CV table body*/
+table.blog tbody td {
+  font-size: 16px;
+}
+
+/* Additional Styling for H1*/
+h1 {
+  font-size: 26;
+    font-weight: 800;
+}
+
+/* Additional Styling for h4*/
+h4 {
+    font-weight: 400;
+}
+
+/* Styling for the footer*/
+footer{
+    font-size: 12px;
+    font-family: 'SF Mono';
+    background-color: #D3D3D3; 
+    border-radius: 20px;
+    padding: 10px 10px;  
+}
+
+/* VIrgin Lin */
+a:link {
+  color: darkturquoise;
+}
+
+/* Visited Link */
+a:visited {
+  color: seagreen;
+}
+
+/* Hover Over Link */
+a:hover {
+  color: mediumaquamarine;
+}
+
+/* Clicked Link */
+a:active {
+  color: cornflowerblue;
+}
+
+table.header {
+  border: 0px solid #D3D3D3;
+  background-color: #D3D3D3;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: 'SF Mono';
+  height: auto;
+  border-radius: 20px;
+}
+/* Styling for the Header Cell*/
+table.header td, table.header th {
+  border: 1px solid #D3D3D3;
+  padding: 10px 10px;
+  font-family: 'SF Mono';
+  height: auto;
+}
+/* Styling for the Header Table body*/
+table.header tbody td {
+  font-size: 18px
+  font-family: 'SF Mono';
+  height: 100%;
+  text-align: left;
+}

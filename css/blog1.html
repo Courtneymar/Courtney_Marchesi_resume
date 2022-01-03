@@ -1,0 +1,195 @@
+<! Courtney Marchesi Task 25 Concurrency>
+<head> 
+    <! Link to the StyleSheet>
+    <link href="css/blog.css" rel="stylesheet">
+    <title>Courtney Marchesi Blog</title>
+</head>
+
+<! Header Table that has Name, Tagline and an image>
+<table class="header">
+    <br>
+<tbody>
+<tr>
+<td><h1>Courtney Marchesi Blog</h1>
+    <h4>This now exists</h4></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<table class="blog">
+<tbody>
+<tr>
+<td><bold>On Threads and Processes</bold></td>
+</tr>
+<tr>
+<td>Firstly a process is when a programme runs, a thread is unit of a process. Now that the basic instruction is out of the way, lets dive a bit deeper into the two components.<br>
+    A process is an excution of its own and does not share information between itself and other processes. The start of a process calls for separate system invokes for each process A process has a stack, heap memory and a data map.<br>
+    Threads on the other hand can have multiple threads created per process that has been called. Threads can share data between each thread. Due to the fact that threads can share information, this is has less of an impact on system memory.<br>
+    In Java, there are 2 ways to create a thread, namely:
+    <li>Implementing a runnable interface - This interface should be used by any programme class that intends to do work on the Thread. It only has one method called public void run() that performs the work on the Thread.</li>
+    <li>By extending the Thread class - This inbuilt Java class, has constructors and methods to allow for work to be done on Threads. It extends the Objects class and implements the Runnable Interface</li><br>
+    </td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td><bold>On the various states of threads in Java</bold></td>
+</tr>
+<tr>
+<td>There are 5 main states of a thread in Java, here we will list and briefly discribe each one:<li>New - This is the first state every thread enters upon creation. It means that the thread has been created, but has not yet begun its run</li>
+<li>Active - This is divided into 2 sub-states:<br>
+    &nbsp;Runnable - A thread that has been created and is ready to run, is then tagged with the runnable state. When the thread is actually set to run is the responibility of the thread scheduler. If there is a multithread system in place, each thread has its own time slot, like a doctors appointment for us, that it uses to run. The thread will wait in the queue for its turn<br>
+    &nbsp;Running - This would be the time that the thread has to run. It is in a running state for as long as its given time slot is and it is busy performing its work
+<li>Blocked - A thread will enter this state if it not currently able to run. This can happen when a thread is waiting for a monitor lock as it tries to get to a portion of code that another thread is currently working on</li>
+<li>Waiting - Just like our earlier analogy of a doctors appointment, a thread is in a Waiting state when it waiting for another thread to execute a function</li>
+<li>Timed Waiting - Is like waiting, but with an added time crunch. In this instance a thread is waiting for a stipulated amount of time, before it tries to do its work</li>
+<li>Terminated - All threads must die. Either by natural causes of completing its run, or it gets murdered by an error, such as an unhandled exception.</li></td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td><bold>Daemon Threads, the background characters to Threads</bold></td>
+</tr>
+<tr>
+<td>Deamon Threads, are low priority threads that will be shutdown the instant the main threads are finished their run. The Java Virtual Machine cares not for the lowly daemon thread because its completion has no bearing on whether the JVM continues to run. <br>
+So where are these neglected threads used? They can be used in
+    <li>Java's Garbage Collection</li>
+    <li>Connection Checks</li>
+    <li>Object Memory Release</li><br>
+Creating a daemon thread is relatively simple, but there is one factor to note: On its first instantiation, you must inform the JVM that this is a daemon thread. You cannot change a thread to be a daemon thread before it starts.<br>
+The daemon thread method extends to Thread class we discussed earlier and has a boolean value of true that must be passed to it, in order to allow it to be a daemon thread. Please see below code snippet:<br>
+        </td>
+</tr>
+<tr><td><img src="img/DaemonThreads.JPG" alt="If you images were on you would see the code!" style="width:600px"></td></tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>The Java Memory Model</td>
+</tr>
+<tr>
+<td>The Java Memory Model is how the JVM interfaces with the computers RAM (Random Access Memory). The JVM istelf is a virtual computer when it runs, so the model is included in the JVM itself. <br> 
+In essence the JVM is like an inception of a computer within a computer and much like a dream has some core rules it has to abide by, so does the JVM on its model of a computer</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>The Three Horsemen of the Process Apocalypse</td>
+</tr>
+<tr>
+<td>If you'll pardon a little hyperbole of course. These three horseman are: deadlick, livelock and starvation. Lets, discuss them a little more in details:
+    <li>Deadlock - A problem that occurs when one process hold another resource that another process is waiting on, while that process itself has the resource that process 1 is waiting for. Akin to a bad divorce where neither party is willing to cede any ground. These processes will wait indefinitely for the resource the other is holding onto</li>
+    <li>Livelock - Similar to Deadlock, but with both processes being too polite to use the resource it has just been given. Both processes have checks to see if the other is waiting for the resource, so are too busy handing the resource between them to get any work done. It what I imagine happens every time 2 Canadians try to hold a door open for each other, both want to hold the door, so neither of them will cross the threshold.</li>
+    <li>Starvation - This occurs when one process holds onto a resource that quite a few resources need, but because it is busy with it, leaves the others to starve it is busy with the resource. Like that one kid at a birthday party who hogs all of the cake, this process leaves none for the others who are waiting in line. It is also worth noting that starvation can occur when processes are in Deadlock and Livelock.</li></td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>The Dreaded Empty Run()</td>
+</tr>
+<tr>
+<td>Failing to override the run() method leads to an empty implemented method call, which gives you no output. This can be hard to tell if there are any errors if there is nothing being throuwn by the compiler. <br>
+It doesn't have to be all gloom and doom though, as using the Runnable Interface we discussed earlier forces you to override the run() method.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>Going Nuclear with Atomic Operations</td>
+</tr>
+<tr>
+<td>One of the problems with a large programme with a lot of processes running concurrently, is the chance for data being written and updated in the wrong sequence leading to a growing cascade of incorrect data being written and overwritten. There are 2 other ways to solve the problem but both have drawbacks. You could lock the variable while one thread uses it, but then all the other threads watiing for this info, have to do just that, wait. You could also put a thread on pause, but again, this will impact the time spent waiting for the programme to complete its run, the time spent waiting could even exceed the programme run time! <br>
+However all is not lost, for just like the Atomic World helped Atom, Atomic Operation can help us avoid issues with data operation when running concurrently.<br>
+The Atomic Operation uses non-blocking alogrithm to perform a compare and swap to ensure the data we are working with is the data we need. Normally a compare and swap has 3 operands:
+<li>The location of the module in memory on which we need to operate on</li>
+<li>The expected value of the variable</li>
+<li>The new value of the variable we are trying to set</li><br>
+The compare and swap only updates the variable with the new data, if the expected value matches that of what is found at the memory location.<br>
+There are 16 Atomic classes in Java, here is the complete list:
+<li>AtomicBoolean - updates boolean value atomically</li>
+<li>AtomicInteger - updates integer value atomically</li>
+<li>AtomicIntegerArray - update the elements of an int array atomically</li>
+<li>AtomicIntegerFieldUpdater - reflection based updates of volatile integer fields of designated classes</li>
+<li>AtomicLong - updates a long atomically</li>
+<li>AtomicLongArray - updates the elements of a long array atomically</li>
+<li>AtomicLongFIeldUpdater - reflection based updates of volatile long fields of designated classed</li>
+<li>AtomicMarkableReference - maintains an object reference along with a mark bit, that can be updated atomically</li>
+<li>AtomicReference - updates an object reference atomically</li>
+<li>AtomicReferenceArray - updates an array of object references atomically</li>
+<li>AtomicReferenceFieldUpdater - refelction based updates to a volatile reference fields in designated classes</li>
+<li>AtomicStampedReference - maintains an object references with an int stamp that can be updated atomically</li>
+<li>DoubleAccumulator - maintains a running double value, of one or more variables, only updated using a given function</li>
+<li>DoubleAdder - initially a 0 double sum, comprises of one or more vairables</li>
+<li>LongAccumulator - maintains a runnign long value, comprising of one of more vairables, only updated using a given function</li>
+<li>LongAdder - initially a 0 long sum, comprises of one of more variables</li>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>Executor vs the ExecutorService</td>
+</tr>
+<tr>
+<td>Put short and sweet, the Executor performs the tasks you give it. ExecutorService is a bit more of a Rolls Royce service. Allowing for start up and shutdown, check job status and will even wait. ExecutorService, extends Executor and is the butler to Executors dumbwaiter</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>Improving on Java Collections Framework</td>
+</tr>
+<tr>
+<td>In the java.util.concurrent package there are 3 categorised into these three interfaces:<br>
+<li>BlockingQueue - has a first in, first out base that blocks you adding to a full queue or an empty queue</li>
+<li>ConcurrentMap - defines atomic functions. Using the compare and switch we discussed earlier. A subinterface of java.util.Map</li>
+<li>ConcurrentNavigableMap - supports exact matches. A sub interface of ConcurrentMap</li></td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="blog">
+<tbody>
+<tr>
+<td>References</td>
+</tr>
+<tr>
+<td><ul>
+<li>Hyperion Dev, 7 October 2021, SE L3T24 - Interview Prep - Concurrency, viewed again on 3 Jan 2021</li>
+<li>Laurence Williams (Guru99), 1 Jan 2022, Process vs Thread: What&rsquo;s the difference?. <a href="https://www.upgrad.com/blog/types-of-supervised-learning/">https://www.guru99.com/difference-between-process-and-thread.htmlhttps://www.upgrad.com/blog/types-of-supervised-learning/</a> viewed again on 3 Jan 2021</li>
+<li>JavaTPoint, Date Unknown,Java Threads | How to create a thread in Java. <a href="https://www.javatpoint.com/how-to-create-a-thread-in-java">https://www.javatpoint.com/how-to-create-a-thread-in-java</a> &nbsp;viewed again on 3 Jan 2021</li>
+<li>Baeldung, 31 Dec 2021,Life Cycle of a Thread in Java. <a href="https://www.baeldung.com/java-thread-lifecycle">https://www.baeldung.com/java-thread-lifecycle</a><a href="https://www.baeldung.com/java-thread-lifecycle">/</a> viewed again on 3 Jan 2021</li>
+<li>Chaitanya Singh (Beginners Book), Date Unknown, Daemon thread in Java with example. <a href="https://beginnersbook.com/2015/01/daemon-thread-in-java-with-example/">https://beginnersbook.com/2015/01/daemon-thread-in-java-with-example/</a>&nbsp; viewed again on 3 Jan 2021</li>
+<li>Jakob Jencov (Jencov.com), 1 Ju l2020, Java Memory Model. <a href="http://tutorials.jenkov.com/java-concurrency/java-memory-model.html">http://tutorials.jenkov.com/java-concurrency/java-memory-model.html</a>&nbsp;viewed again on 3 Jan 2021</li>
+<li>Baeldung, 28 Apr 2021, Deadlock, Livelock and Starvation. <a href="https://www.baeldung.com/cs/deadlock-livelock-starvation">https://www.baeldung.com/cs/deadlock-livelock-starvation</a> viewed again on 3 Jan 2021</li>
+<li>InterviewSansar, 6 Dec 2014, What happens if we don&rsquo;t override run() method during thread creation using extended thread? <a href="https://www.interviewsansar.com/must-override-run-method-in-java/">https://www.interviewsansar.com/must-override-run-method-in-java/</a>&nbsp;<a href="https://www.upgrad.com/blog/types-of-supervised-learning/"></a> viewed again on 3 Jan 2021</li>
+<li>JavaTPoint, Date Unknown, Java Atomic. <a href="https://www.javatpoint.com/java-atomic/">https://www.javatpoint.com/java-atomic/</a> viewed again on 3 Jan 2021</li>
+<li>Laurence Williams (Guru99), 1 Jan 2022, Process vs Thread: What&rsquo;s the difference?. <a href="https://www.upgrad.com/blog/types-of-supervised-learning/">https://www.guru99.com/difference-between-process-and-thread.htmlhttps://www.upgrad.com/blog/types-of-supervised-learning/</a> viewed again on 3 Jan 2021</li>
+<li>martiansnoop (StackOverflow username), 13 Nov 2016, what's the difference between Executor and ExecutorService? [closed].<a href="https://stackoverflow.com/questions/15052317/whats-the-difference-between-executor-and-executorservice">https://stackoverflow.com/questions/15052317/whats-the-difference-between-executor-and-executorservice</a>&nbsp;<a href="https://www.upgrad.com/blog/types-of-supervised-learning/"></a> viewed again on 3 Jan 2021</li>
+<li>Oracle.com, Date Unknown, Concurrent Collections.<a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/collections.html">https://docs.oracle.com/javase/tutorial/essential/concurrency/collections.html</a> viewed again on 3 Jan 2021</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
